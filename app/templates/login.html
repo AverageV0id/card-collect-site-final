@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хомяк 2.0</title>
+    <link rel="stylesheet" href="login_style.css">
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="login_menu">
+        <div class="login">
+            <div class="login_text">Логин:</div>
+            <input id="login" type="text" name="text" />
+        </div>
+        
+        <div class="password">
+            <div class="password_text">Пароль:</div>
+            <input id="password" type="text" name="text" />
+        </div>
+        <button class="submit" type="button">Войти</button>
+    </div>
+{% endblock %}
+</body>
+</html>

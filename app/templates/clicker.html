@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хомяк 2.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="clicker_menu">
+        <div class="currency_number" id="score">Монеты: 0</div>
+        <div type="button" class="clicker_button" id="clicker_button">
+            <img
+            alt="click"
+            class="contain"
+            src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_67590c619c90d107c9b8dd11_67590c7d9c90d107c9b8e6ce/scale_1200" />
+            <script>
+                let score = 0;
+        
+                // Increment score on cookie click
+                const cookie = document.getElementById('clicker_button');
+                const scoreDisplay = document.getElementById('score');
+        
+                cookie.addEventListener('click', () => {
+                    score++;
+                    scoreDisplay.textContent = 'Монеты: ' + score ;
+                });
+
+                
+            </script>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>
