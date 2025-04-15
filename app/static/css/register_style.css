@@ -1,0 +1,85 @@
+body {
+font-family: "Bowlby One SC", sans-serif;
+background-color: black;
+}
+.menu {
+text-shadow:
+1px 1px 1px rgb(0, 0, 0),
+2px 2px 2px rgb(255, 255, 255);
+display: flex;
+justify-content: center;
+background-color: rgb(77, 77, 94);
+width: 100%;
+height: 50px;
+
+}
+
+.menu_button{
+text-shadow:
+1px 1px 1px rgb(0, 0, 0),
+2px 2px 2px rgb(255, 255, 255);
+margin-top: 4.3px;
+margin-left: 50px;
+width: 50px;
+height: 10px;
+color: gray;
+
+
+}
+.menu_button_1{
+text-shadow:
+1px 1px 1px rgb(0, 0, 0),
+2px 2px 1px rgb(255, 255, 255);
+margin-top: 4.3px;
+margin-left: 50px;
+width: 50px;
+height: 10px;
+color: black;
+-webkit-text-stroke: 0.5px rgb(53, 17, 87);
+
+}
+.register_menu{
+margin-left: 50%;
+margin-top: 10%;
+height: 250px;
+width: 210px;
+outline: thick double #32a1ce;
+color:blueviolet;
+
+}
+.login{
+height: 50px;
+font-size: 180%;
+margin-top: 5%;
+}
+.login_text{
+margin-left: 20%;
+}
+.password{
+font-size: 180%;
+margin-top: 10%;
+}
+.password_text{
+margin-left: 20%;
+}
+.repeat_password_text{
+    margin-left:10%;
+    font-size: 120%;
+}
+.submit{
+background-color: darkmagenta;
+font-size: 130%;
+
+margin-top: 5%;
+text-shadow:
+1px 1px 1px dimgray,
+2px 2px 1px plum;
+}
+.submit:hover {
+background-color:darkorchid;
+}
+.submit:active {
+box-shadow:
+  inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+  inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}

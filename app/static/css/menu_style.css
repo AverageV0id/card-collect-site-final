@@ -1,0 +1,34 @@
+body {
+    font-family: "Bowlby One SC", sans-serif;
+    background-color: black;
+}
+
+
+.menu {
+    text-shadow:
+    1px 1px 1px rgb(0, 0, 0),
+    2px 2px 2px rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    background-color: rgb(77, 77, 94);
+    width: 100%;
+    height: 50px;
+
+}
+
+.menu_button{
+    margin-left: 50px;
+    width: 50px;
+    height: 10px;
+    color: blueviolet;
+
+
+}
+.menu_button_1{
+    margin-left: 50px;
+    width: 50px;
+    height: 10px;
+    color: blueviolet;
+    -webkit-text-stroke: 0.5px rgb(53, 17, 87);
+
+}

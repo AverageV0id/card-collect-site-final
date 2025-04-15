@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хомяк 2.0</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/shop_style.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+
+{% block content %}
+    <div class="shop_menu">Ежедневные предложения
+        <div class="deals">
+            <div class="daily_deal">
+                <img class="contain"
+                src="https://yt3.googleusercontent.com/ytc/AIdro_nfdA69SMM-GiFikWAw0iSpJwYxIpSQTz-b5kFVM7wyIw=s900-c-k-c0x00ffffff-no-rj"/></div>
+            <div class="daily_deal">
+                <img class="contain"
+            src="https://yt3.googleusercontent.com/ytc/AIdro_kKMeyVBuVT8iSPAcBYvD2BNWsOkJVXvG4wybRT=s900-c-k-c0x00ffffff-no-rj"/>
+            </div>
+            <div class="daily_deal">
+                <img class="contain"
+            src="https://sun9-38.userapi.com/impf/c637530/v637530508/27ce5/AIzMN2jX3no.jpg?size=800x760&quality=96&sign=a732d3e7b12d638b3a6a047e9180d046&c_uniq_tag=OffEqIMVa_XTgTSy-wbuest2OOdKfFywZzB4P-aR9Ck&type=album"/>
+            </div>
+        </div>
+        <div class="daily_gifts">Ежедневный подарок
+            <div class="daily_gift"><img class="contain"
+                src="https://i.pinimg.com/736x/62/02/b6/6202b6e6a3d32720f057407f4e09d02d.jpg"/></div>
+            </div>
+        </div>
+        
+
+{% endblock %}
+</body>
+</html>

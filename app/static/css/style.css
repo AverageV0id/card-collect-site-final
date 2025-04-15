@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+body {
+    font-family: "Bowlby One SC", sans-serif;
+    background-color: black;
+}
+
+
+.menu {
+    text-shadow:
+    1px 1px 1px rgb(0, 0, 0),
+    2px 2px 2px rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    background-color: rgb(77, 77, 94);
+    width: 100%;
+    height: 50px;
+
+}
+
+.menu_button{
+    margin-left: 50px;
+    width: 50px;
+    height: 10px;
+    color: blueviolet;
+
+    
+}
+.menu_button_1{
+    margin-left: 50px;
+    width: 50px;
+    height: 10px;
+    color: blueviolet;
+    -webkit-text-stroke: 0.5px rgb(53, 17, 87);
+    
+}
+.clicker_menu {
+    margin-top: 10%;
+    margin-left: 35%;
+
+    width: 500px;
+    height: 500px;
+
+}
+.clicker_button {
+    margin-left: 15%;
+    width: 350px;
+    height: 300px;
+    color: blueviolet;
+}
+
+.clicker_button:hover {
+    background-color: rgb(31, 36, 61);
+  }
+.clicker_button:active {
+    box-shadow:
+      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+.currency_number {
+    user-select: none;
+    margin-left: 30%;
+    width: 300px;
+    font-size: 200%;
+    color: rgb(255, 255, 255);
+}
+img {
+    width: 100%;
+    height: 100%
+}
+.contain {
+    object-fit: contain;
+  }
+

@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
+
 <body>
     {% with messages = get_flashed_messages()%}
     {% if messages%}
@@ -16,10 +11,10 @@
     {% endwith %}
 
     <div class="menu">
-        <div class="menu_button_1">Войти</div>
-        <div class="menu_button">Магазин</div>
-        <div class="menu_button">Кликер</div>
-        <div class="menu_button">Профиль</div>
+        <div class="menu_button_1"><a href="http://127.0.0.1:5000/login">Войти</a></div>
+        <div class="menu_button"><a href="http://127.0.0.1:5000/shop">Магазин</a></div>
+        <div class="menu_button"><a href="http://127.0.0.1:5000/clicker">Кликер</a></div>
+        <div class="menu_button"><a href="http://127.0.0.1:5000/profile">Профиль</a></div>
 
     </div>
 

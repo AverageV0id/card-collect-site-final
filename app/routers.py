@@ -1,6 +1,6 @@
 from flask import render_template, redirect, flash
 from app import app
-
+from app.forms import *
 
 @app.route('/clicker')
 def clicker():
@@ -14,9 +14,20 @@ def profile():
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
-    return render_template('login.html')
+    form = LoginForm()
+    if form.validate_on_submit():
+        flash('Вы вошли как {}'.format(
+            form.username.data))
+    return render_template('login.html', form=form)
 
 
 @app.route('/register', methods=["GET", "POT"])
 def register():
-    return render_template('register.html')
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash('Вы зарегистрировались как {}'.format(form.username.data))
+    return render_template('register.html', form=form)
+
+@app.route('/shop')
+def shop():
+    return render_template('shop.html')

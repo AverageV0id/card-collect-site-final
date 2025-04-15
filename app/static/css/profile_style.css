@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+
+body {
+    font-family: "Wallpoet", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: black;
+}
+
+
+.menu {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(77, 77, 94);
+    width: 100%;
+    height: 50px;
+
+}
+.menu_button{
+    text-shadow:
+    1px 1px 1px rgb(0, 0, 0),
+    2px 2px 2px rgb(255, 255, 255);
+    margin-top: 4.3px;
+    margin-left: 50px;
+    width: 50px;
+    height: 10px;
+    color: gray;
+
+    
+}
+.menu_button_1{
+    text-shadow:
+    1px 1px 1px rgb(0, 0, 0),
+    2px 2px 1px rgb(255, 255, 255);
+    margin-top: 4.3px;
+    margin-left: 50px;
+    width: 50px;
+    height: 10px;
+    color: black;
+    -webkit-text-stroke: 0.5px rgb(53, 17, 87);
+    
+}
+.info{
+    
+    margin-top: 10%;
+    margin-left: 50%;
+
+    width: 200px;
+    height: 300px;
+
+}
+.main_info{
+    display: flex;
+}
+.name{
+    display: flex;
+    font-size: 180%;
+    width: 70px;
+    height: 50px;
+    color: blueviolet;
+}
+.age{
+
+    font-size: 180%;
+    width: 110px;
+    height: 50px;
+    color: blueviolet;
+}
+.time_on_site{
+
+    width: 200px;
+    height: 50px;
+    font-size: 150%;
+
+    color: blueviolet;
+}
+.avatar{
+
+
+    width: 200px;
+    height: 200px;
+    color: blueviolet;
+
+}
+.cards{
+    margin-top: 15px;
+    color: blueviolet;
+    margin-left: 50%;
+    font-size: 150%;
+}
+.card_showcase{
+    display: flex;
+    font-size: 150%;
+
+    color: blueviolet;
+    margin-top: 50px;
+    margin-left: 30%;
+
+    width: 800px;
+}
+
+.statistics{
+    margin-top: 5%;
+    width: 500px;
+    height: 200px;
+    margin-left: 50%;
+    font-size: 150%;
+
+    color: blueviolet;
+}
+.price_sum{
+
+}
+.rarity{
+    margin-top: 5%;
+}
+.contain {
+    object-fit: contain;
+  }
+
+img {
+    margin-right: 15px;
+    width: 100%;
+    height: 100%
+}
+
+
