@@ -23,7 +23,9 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
+
 class Card(db.Model):
+    id: so.Mapped[int] = so.mapped_column(primary_key=True)
     name: so.Mapped[str] = so.mapped_column(index=True, unique=True)
     rarity: so.Mapped[str] = so.mapped_column(index=True)
     value: so.Mapped[int] = so.mapped_column(index=True)
