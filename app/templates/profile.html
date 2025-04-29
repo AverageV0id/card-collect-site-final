@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/profile_style.css') }}">
 </head>
 <body>
-    {% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
     <div class="info">
@@ -26,29 +26,14 @@
         
     </div>
     <div class="cards">Витрина Карт:</div>
-    <div class="card"></div>
     <div class="card_showcase">
+        {% for card in cards %}
         <div class="card">
-            <img class="contain"
-            src="https://i.pinimg.com/736x/9d/61/04/9d6104063d806a4cd45c1123357e5074.jpg"/>
+            <img src="{{ url_for('static', filename='images/' + card.image_filename) }}" alt="{{ card.title }}">
+            <h3>{{ card.title }}</h3>
+            <p>{{ card.description }}</p>
         </div>
-        <div class="card">
-            <img class="contain"
-            src="https://ih1.redbubble.net/image.5526892251.9129/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg"/>
-        </div>
-        <div class="card">
-            <img class="contain"
-            src="https://avatars.mds.yandex.net/i?id=1eed49b98f91dfa991bf2d455c2a0e02413d0586-5233841-images-thumbs&n=13"/>
-        </div>
-        <div class="card">
-            <img class="contain"
-            src="https://avatars.mds.yandex.net/i?id=6acaedd8154d69fa53f6f48e7b32fc6a32dcc48a-5530612-images-thumbs&n=13"/>
-        </div>
-        <div class="card">
-            <img class="contain"
-            src="https://avatars.mds.yandex.net/i?id=4807835eaa9ddac844e00f5612050e5e_sr-9683943-images-thumbs&n=13"/>
-        </div> 
-    </div>
+        {% endfor %}
     <div class="statistics">
         <div class="price_sum">Общая ценность:</div>
         <div class="rarity">Самая редкая:</div>

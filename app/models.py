@@ -6,7 +6,11 @@ import sqlalchemy.orm as so
 from app import  db
 from flask_login import UserMixin, login_manager
 from app import login
+from app import app
 
+# Настройка базы данных SQLite
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 class User(UserMixin, db.Model):
     id: so.Mapped[int] = so.mapped_column(primary_key=True)
@@ -29,6 +33,10 @@ class Card(db.Model):
     name: so.Mapped[str] = so.mapped_column(index=True, unique=True)
     rarity: so.Mapped[str] = so.mapped_column(index=True)
     value: so.Mapped[int] = so.mapped_column(index=True)
+    image_filename = db.Column(db.String(100), nullable=False)  # имя файла картинки из static/images
+
+    def repr(self):
+        return f'<Card {self.title}>'
 
 
 @login.user_loader
