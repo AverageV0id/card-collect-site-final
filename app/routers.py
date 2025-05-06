@@ -1,3 +1,5 @@
+import random
+
 from flask import render_template, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 
@@ -5,12 +7,11 @@ from app import app
 from app.forms import *
 from app.models import *
 
-# Настройка базы данных SQLite
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-db = SQLAlchemy(app)
-
+@app.route('/')
+def start():
+    cards = Card.query.all()
+    print(cards)
+    return render_template('profile.html', cards=cards)
 
 @app.route('/clicker')
 def clicker():
@@ -42,4 +43,6 @@ def register():
 
 @app.route('/shop')
 def shop():
-    return render_template('shop.html')
+    id = random.randint(1, 9)
+    card = Card.query.get(id)
+    return render_template('shop.html', card=card)

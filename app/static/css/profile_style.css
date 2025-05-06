@@ -42,7 +42,7 @@ body {
 }
 .info{
     
-    margin-top: 10%;
+    margin-top: 3%;
     margin-left: 50%;
 
     width: 200px;
@@ -75,13 +75,19 @@ body {
     color: blueviolet;
 }
 .avatar{
-
-
     width: 200px;
     height: 200px;
     color: blueviolet;
 
 }
+
+.avatar img {
+    width: 200px;
+    height: 200px;
+    color: blueviolet;
+
+}
+
 .cards{
     margin-top: 15px;
     color: blueviolet;
@@ -89,18 +95,14 @@ body {
     font-size: 150%;
 }
 .card_showcase{
-    display: flex;
-    font-size: 150%;
-
-    color: blueviolet;
-    margin-top: 50px;
-    margin-left: 30%;
-
-    width: 800px;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки одинаковой ширины */
+    gap: 16px; /* отступы между карточками, можно настроить */
 }
 
 .statistics{
-    margin-top: 5%;
+    margin-top: 15%;
     width: 500px;
     height: 200px;
     margin-left: 50%;
@@ -118,10 +120,14 @@ body {
     object-fit: contain;
   }
 
-img {
-    margin-right: 15px;
-    width: 100%;
-    height: 100%
+.card {
+    display: flex;
+    flex-direction: column; /* вертикальное расположение элементов внутри */
+    justify-content: center; /* вертикальное центрирование */
+    align-items: center; /* горизонтальное центрирование (если нужно) */
+    height: 100%; /* чтобы flex работал по высоте контейнера */
 }
 
-
+.card img {
+ width: 100px;
+}

@@ -29,15 +29,17 @@
     <div class="card_showcase">
         {% for card in cards %}
         <div class="card">
-            <img src="{{ url_for('static', filename='images/' + card.image_filename) }}" alt="{{ card.title }}">
-            <h3>{{ card.title }}</h3>
-            <p>{{ card.description }}</p>
+            <img src="{{ url_for('static', filename='img/' + card.image_filename) }}" alt="{{ card.title }}">
+            <h3>{{ card.name }}</h3>
+            <p>{{ card.rarity }}</p>
+            <p>{{ card.value }}</p>
         </div>
         {% endfor %}
+    </div>
     <div class="statistics">
         <div class="price_sum">Общая ценность:</div>
         <div class="rarity">Самая редкая:</div>
-    </div>
+        </div>
 {% endblock %}
 </body>
 </html>

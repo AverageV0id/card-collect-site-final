@@ -25,9 +25,15 @@
             </div>
         </div>
         <div class="daily_gifts">Ежедневный подарок
-            <div class="daily_gift"><img class="contain"
-                src="https://i.pinimg.com/736x/62/02/b6/6202b6e6a3d32720f057407f4e09d02d.jpg"/></div>
+            <div class="daily_gift"><img src="{{ url_for('static', filename='img/' + card.image_filename) }}" alt="{{ card.title }}">
+            <h3>{{ card.name }}</h3>
+            <p>{{ card.rarity }}</p>
+            <p>{{ card.value }}</p>
             </div>
+
+        <div class="card">
+
+        </div>
         </div>
         
 

@@ -65,9 +65,16 @@ color: black;
 
 }
 .daily_gift{
+
     margin-top:15px;
     height: 150px;
     
+}
+
+.daily_gift img{
+
+    width: 100px;
+
 }
 .contain {
     object-fit: contain;
