@@ -1,42 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Хомяк 2.0</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/shop_style.css') }}">
 </head>
-<body>
-    {% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
-    <div class="shop_menu">Ежедневные предложения
-        <div class="deals">
-            <div class="daily_deal">
-                <img class="contain"
-                src="https://yt3.googleusercontent.com/ytc/AIdro_nfdA69SMM-GiFikWAw0iSpJwYxIpSQTz-b5kFVM7wyIw=s900-c-k-c0x00ffffff-no-rj"/></div>
-            <div class="daily_deal">
-                <img class="contain"
-            src="https://yt3.googleusercontent.com/ytc/AIdro_kKMeyVBuVT8iSPAcBYvD2BNWsOkJVXvG4wybRT=s900-c-k-c0x00ffffff-no-rj"/>
-            </div>
-            <div class="daily_deal">
-                <img class="contain"
-            src="https://sun9-38.userapi.com/impf/c637530/v637530508/27ce5/AIzMN2jX3no.jpg?size=800x760&quality=96&sign=a732d3e7b12d638b3a6a047e9180d046&c_uniq_tag=OffEqIMVa_XTgTSy-wbuest2OOdKfFywZzB4P-aR9Ck&type=album"/>
-            </div>
-        </div>
-        <div class="daily_gifts">Ежедневный подарок
-            <div class="daily_gift"><img src="{{ url_for('static', filename='img/' + card.image_filename) }}" alt="{{ card.title }}">
-            <h3>{{ card.name }}</h3>
-            <p>{{ card.rarity }}</p>
-            <p>{{ card.value }}</p>
-            </div>
+<div class="shop_menu">Ежедневные предложения
+    <div class="deals">
+        <div class="daily_product"><img src="{{ url_for('static', filename='img/' + card1.image_filename) }}" alt="{{ card1.title }}">
+            <h3>{{ card1.name }}</h3>
+            <p>{{ card1.rarity }}</p>
+            <p>{{ card1.value }}</p>
+            <button type="button" class="buy">Купить<button>
+            </button>
+                <div class="daily_product"><img src="{{ url_for('static', filename='img/' + card2.image_filename) }}" alt="{{ card2.title }}">
+                    <h3>{{ card2.name }}</h3>
+                    <p>{{ card2.rarity }}</p>
+                    <p>{{ card2.value }}</p>
+                    <button type="button" class="buy">Купить<button>
+                    </button>
+                        <div class="daily_product"><img src="{{ url_for('static', filename='img/' + card3.image_filename) }}" alt="{{ card3.title }}">
+                            <h3>{{ card3.name }}</h3>
+                            <p>{{ card3.rarity }}</p>
+                            <p>{{ card3.value }}</p>
+                            <button type="button" class="buy">Купить<button>
 
-        <div class="card">
+                            </button>
+                                <div class="daily_gifts">Ежедневный подарок
+                                    <div class="daily_gift"><img src="{{ url_for('static', filename='img/' + card4.image_filename) }}" alt="{{ card4.title }}">
+                                        <h3>{{ card4.name }}</h3>
+                                        <p>{{ card4.rarity }}</p>
+                                        <p>{{ card4.value }}</p>
+                                        <buttontype="button" class="buy">Купить<button>
 
-        </div>
-        </div>
-        
+                                    </div>
 
-{% endblock %}
-</body>
+                                </div>
+
+
+                                {% endblock %}
 </html>

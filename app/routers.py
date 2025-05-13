@@ -41,8 +41,15 @@ def register():
         flash('Вы зарегистрировались как {}'.format(form.username.data))
     return render_template('register.html', form=form)
 
+
 @app.route('/shop')
 def shop():
-    id = random.randint(1, 9)
-    card = Card.query.get(id)
-    return render_template('shop.html', card=card)
+    id = random.randint(1, 2)
+    card1 = Card.query.get(id)
+    id = random.randint(3, 4)
+    card2 = Card.query.get(id)
+    id = random.randint(5, 6)
+    card3 = Card.query.get(id)
+    id = random.randint(7, 9)
+    card4 = Card.query.get(id)
+    return render_template('shop.html', card1=card1, card2=card2, card3=card3, card4=card4)
