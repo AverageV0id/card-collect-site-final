@@ -7,11 +7,11 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-{% extends "base.html" %}
 
+{% extends "base.html" %}
 {% block content %}
     <div class="clicker_menu">
-        <div class="currency_number" id="score">Монеты: 0</div>
+        <div class="currency_number" id="score">Монеты: (Сделайте клик)</div>
         <form action="POST">
         <div type="button" class="clicker_button" id="clicker_button">
             <img
@@ -19,21 +19,74 @@
             class="contain"
             src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_67590c619c90d107c9b8dd11_67590c7d9c90d107c9b8e6ce/scale_1200" />
         </form>
-            <script>
-                let score = 0;
-        
-                // Increment score on cookie click
-                const cookie = document.getElementById('clicker_button');
-                const scoreDisplay = document.getElementById('score');
-        
-                cookie.addEventListener('click', () => {
-                    score++;
-                    scoreDisplay.textContent = 'Монеты: ' + score ;
-                });
-
-                
-            </script>
         </div>
+        <div class="multi_cost" id="cost">Цена улучшения: 10</div>
+        <div type="button" class="upgrade_button" id="upgrade_button">
+            <img
+            alt="click"
+            class="contain"
+            src="https://img.freepik.com/premium-vector/hamster-ai-generated-image_362642-1794.jpg?w=1380" />
+<script>
+    let score = 0;
+    let multiplier = 1;
+    let cost = 10;
+
+    const scoreDisplay = document.getElementById('score');
+    const costDisplay = document.getElementById('cost');
+    const clickerButton = document.getElementById('clicker_button');
+    const upgradeButton = document.getElementById('upgrade_button');
+
+    function updateDisplay() {
+        scoreDisplay.textContent = 'Монеты: ' + score;
+        costDisplay.textContent = 'Цена улучшения: ' + cost;
+    }
+
+    // Функция отправки запроса на сервер для обновления баланса
+    async function addCoinsToServer(coins) {
+        try {
+            const response = await fetch('/update_balance', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ coins: coins })
+            });
+            if (!response.ok) {
+                const error = await response.json();
+                alert('Ошибка: ' + (error.error || 'Не удалось обновить баланс'));
+                return;
+            }
+            const data = await response.json();
+            score = data.new_balance;  // обновляем локальный счет из ответа сервера
+            updateDisplay();
+        } catch (error) {
+            alert('Ошибка при соединении с сервером');
+            console.error(error);
+        }
+    }
+
+    clickerButton.addEventListener('click', () => {
+        let coinsEarned = 1 * multiplier;
+        // Отправляем запрос на сервер
+        addCoinsToServer(coinsEarned);
+    });
+
+    upgradeButton.addEventListener('click', () => {
+        if (score >= cost) {
+            score -= cost;
+            multiplier += 1;
+            cost = Math.floor(cost * 1.5);
+            alert('Улучшение множителя куплено!');
+            updateDisplay();
+        } else {
+            alert('Недостаточно монет для улучшения множителя!');
+        }
+    });
+
+    updateDisplay();
+</script>
+
+        <div>
     </div>
 {% endblock %}
 </body>

@@ -50,10 +50,30 @@ body {
     color: blueviolet;
 }
 
+.upgrade_button {
+    margin-left: 15%;
+    margin-top: 15px;
+    width: 250px;
+    height: 200px;
+}
+.multi_cost {
+    margin-left: 25%;
+    margin-top: 30px;
+    color: white
+}
+
 .clicker_button:hover {
     background-color: rgb(31, 36, 61);
   }
 .clicker_button:active {
+    box-shadow:
+      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  }
+.upgrade_button:hover {
+    background-color: rgb(31, 36, 61);
+  }
+.upgrade_button:active {
     box-shadow:
       inset -2px -2px 3px rgba(255, 255, 255, 0.6),
       inset 2px 2px 3px rgba(0, 0, 0, 0.6);

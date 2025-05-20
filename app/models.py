@@ -17,7 +17,9 @@ class User(UserMixin, db.Model):
     username: so.Mapped[str] = so.mapped_column(sa.String(64), index=True,  unique=True)
     email: so.Mapped[str] = so.mapped_column(sa.String(120), index=True, unique=True)
     password_hash: so.Mapped[Optional[str]] = so.mapped_column(sa.String(256))
-    balance: so.Mapped[int] = so.mapped_column(sa.String(9))
+    balance: so.Mapped[int] = so.mapped_column()
+    registration_date: so.Mapped[str] = so.mapped_column(sa.String(20))
+    user_card: so.Mapped[str] = so.mapped_column(sa.String(100))
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
@@ -27,6 +29,12 @@ class User(UserMixin, db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+
+@login.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
 
 
 class Card(db.Model):
@@ -40,6 +48,3 @@ class Card(db.Model):
         return f'<Card {self.title}>'
 
 
-@login.user_loader
-def load_user(user_id):
-    return User.get(user_id)
